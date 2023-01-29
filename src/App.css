@@ -2,37 +2,116 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  height: 100vh;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container.hot {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+    url("https://www.treehugger.com/thmb/emVFfdc5Dwzu-u531n2zOSyvkLc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2018__07__palm_trees_hot_sun-f8e20b86425b492f9d777d92db46db49.jpg");
+}
+
+.container.cold {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+    url("https://www.findingtheuniverse.com/wp-content/uploads/2017/01/Blue2Bhour2BFinland_by_Laurence2BNorah.jpg")
+      no-repeat center/cover;
+}
+
+.container.cold #weather {
+  min-width: 400px;
+  background-image: url("https://www.findingtheuniverse.com/wp-content/uploads/2017/01/Blue2Bhour2BFinland_by_Laurence2BNorah.jpg");
+}
+
+.container.hot #weather {
+  min-width: 400px;
+  background-image: url("https://www.treehugger.com/thmb/emVFfdc5Dwzu-u531n2zOSyvkLc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2018__07__palm_trees_hot_sun-f8e20b86425b492f9d777d92db46db49.jpg");
+}
+
+#weather {
+  min-width: 400px;
+  height: 600px;
+  background: no-repeat center/cover;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+#weather input {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 19px;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  outline: none;
+  border-radius: 0px 15px 0 15px;
+  margin-bottom: 40px;
+  width: 100%;
+  transition: 0.4s;
+}
+
+#weather input:focus {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px 0 15px 0;
+}
+
+#weather .content {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#weather .content .name {
+  white-space: nowrap;
+  font-size: 35px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#weather .content .time {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+#weather .content .temperature {
+  font-size: 65px;
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  box-shadow: 2px 2px 0 2px rgba(0, 0, 0, 0.5);
+  margin: 20px 0 30px;
+  font-weight: 800;
+}
+
+#weather .content .short-desc {
+  font-size: 40px;
+  font-weight: 600;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+#weather .content .more-desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+#weather .content .more-desc > div {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+#weather .content .more-desc > div span {
+  margin-top: 15px;
 }
